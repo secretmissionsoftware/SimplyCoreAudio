@@ -1,4 +1,4 @@
-// swift-tools-version:5.1
+// swift-tools-version:5.5
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -14,7 +14,11 @@ let package = Package(
     ],
     
     dependencies: [
-        .package(url: "https://github.com/apple/swift-atomics.git", from: "0.0.1")
+        // Dependencies declare other packages that this package depends on.
+      .package(
+            url: "https://github.com/apple/swift-atomics.git",
+            .upToNextMajor(from: "1.0.0") // or `.upToNextMinor
+          )
     ],
     
     targets: [
